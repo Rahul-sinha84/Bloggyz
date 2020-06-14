@@ -1,0 +1,34 @@
+<%- include("../partials/header.ejs")  %>
+<div class="container-new-users">
+    <div class="container-new-users__text">
+        Join with us...
+    </div>
+    <form action="/signup" method="POST">
+        <input id="firstName" type="text" class="container-new-users__inner " placeholder="First Name" name="firstName" required>
+        <label for="firstName">First Name</label>
+
+        <input id="lastName" type="text" class="container-new-users__inner " placeholder="Last Name" name="lastName" required>
+        <label for="lastName">Last Name</label>
+
+        <input id="username" type="text" class="container-new-users__inner" placeholder="Username" name="username" required>
+        <label for="username">Username</label>
+
+        <input id="email" type="email" class="container-new-users__inner" placeholder="E-mail" name="email" required>
+        <label for="email">E-mail</label>
+
+        <input id="password" type="password" class="container-new-users__inner" placeholder="Password" name="password" required>
+        <label for="password">Password</label>
+        <hr>
+        <input id="secretCode" type="text" class="container-new-users__inner u-margin-top-small" placeholder="Admin Code" name="adminCode">
+        <label for="secretCode">Admin Code</label>
+        <p>*Fill this only if you wanted to be admin</p>
+        <hr class="u-margin-bottom-small">
+        <button type="submit" class="submit-button-new">Submit</button>
+        <p class="link-paragraph">
+            Already joined?  <a href="/login" class="btn-link">login</a> from here
+        </p>
+    </form>
+</div>
+
+
+<%- include("../partials/footer.ejs")  %>

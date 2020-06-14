@@ -1,0 +1,26 @@
+<%- include("../partials/header.ejs")  %>
+<div class="section-new-blogs">
+    <div class="container-new">
+        <div class="container-new__text">
+            Fill the required information...
+        </div>
+        <form action="/blogs" method="POST">
+            <input type="text" id="title" placeholder="Title" name="blogs[title]" class="container-new__inner " required>
+            <label for="title">Title</label>
+
+            <input type="text" id="image" placeholder="Image URL" name="blogs[image]" class="container-new__inner " required>
+            <label for="image">Image URL</label>
+
+            <textarea name="blogs[about]" id="about" placeholder="Tell us something about this..." class="container-new__inner " rows="5" cols="100" required></textarea>
+            <label for="about">Tell is something about this...</label>
+
+            <button class="submit-button-new" type="submit">Submit</button>
+            <p class="link-paragraph">
+                Go back to <a href="/" class="btn-link">Home</a>
+            </p>
+        </form>
+    </div>
+    
+</div>
+
+<%- include("../partials/footer.ejs")  %>

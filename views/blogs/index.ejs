@@ -1,0 +1,46 @@
+<%- include("../partials/header.ejs")  %>
+<div class="section-index-blogs">
+    <div class="index__container">
+        <div class="index__container--text">
+            Discover something new...
+        </div>
+		<div class="index__container--search-bar">
+			<form action="/blogs" method="GET">
+				<input type="text" name="search" placeholder="Search for the title of blog...">
+				<button type="submit"><i class="icon-basic-magnifier"></i></button>
+			</form>
+		</div>
+		<div class="index__container--buttons">
+            <% if(currentUser){ %>
+                <a href="/logout" class="btn btn-index-page buttn buttn--1">Log Out!</a>
+            <% }else{ %>    
+                <a href="/login" class="btn btn-index-page buttn buttn--1">Log in!</a>
+                <a href="/signup" class="btn btn-index-page buttn buttn--2">signup!</a>
+            <% } %>
+			<a href="/blogs/new" class="btn btn-index-page buttn buttn--3">Add your blog</a>
+		</div>
+    </div>
+    <% for(var i=0;i < blogs.length;i++){ %>
+        <div class="row">
+            <div class="index__blog">
+                <% while(i < blogs.length){ %>
+                    <div class="col-1-of-2">
+                        <div class="index__blogs-inside">
+                            <a class="btn-info" href="blogs/<%= blogs[i]._id %>">More info</a>
+							<img style="width: 100%;" src="<%= blogs[i].image %>" alt="blog image">
+                            <h1 class="heading-new"><%= blogs[i].title %></h1>
+                        </div>  
+                    </div>
+                        <% i++; %>
+                        <% if(i % 2 == 0){ %>
+                            <% i--; %>
+                            <% break; %>
+                        <% } %>
+                <% } %>
+            </div>
+                                
+        </div>
+    <% } %>
+</div>
+
+<%- include("../partials/footer.ejs")  %>

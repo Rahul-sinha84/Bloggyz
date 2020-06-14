@@ -1,0 +1,23 @@
+<%- include("../partials/header.ejs")  %>
+<div class="section-edit-comments">
+    <div class="container-edit">
+        <div class="container-edit__text">
+            <% if(blogs.title.length >= 30 ){ %>
+                Edit your comment to "<%= blogs.title.substring(0,30) %>..."
+            <% }else{ %>    
+                Edit your comment to "<%= blogs.title %>"
+            <% } %>
+        </div>
+        <form action="/blogs/<%= blogs._id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+            <textarea name="comments[text]" id="comment" class="container-edit__inner" rows="5" cols="100" required><%= comment.text %></textarea>
+            <label for="comment">Your Comment</label>
+            <button type="submit" class="submit-button-edit">Submit</button>
+            <p class="link-paragraph">
+                Go back to <a href="/blogs/<%=blogs._id%>" class="btn-link">blog</a>
+            </p>
+        </form>
+    </div>
+
+</div>
+
+<%- include("../partials/footer.ejs")  %>

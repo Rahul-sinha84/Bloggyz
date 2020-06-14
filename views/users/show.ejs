@@ -1,0 +1,40 @@
+<%- include("../partials/header.ejs")  %>
+
+<div class="profile-container">
+    <div class="row">
+        <div class="profile-container__full">
+           
+            <div class="col-1-of-3">
+                <div class="profile-container__full__blogs">
+                    <h1>Blogs</h1>
+                    <% if(Blogs.length > 0){ %>
+                    <% Blogs.forEach(function(blogs){ %>
+                    <div class="profile-container__full__blogs--container">
+                        <img src="<%= blogs.image %>" alt="photo-blogs"> 
+                        <a href="/blogs/<%= blogs._id %>"><h3><%= blogs.title %></h3></a>
+                    </div>
+                    <% }); %>
+                    <% }else{ %>
+                        <h2>No post submitted yet....</h2>
+                        <a href="/blogs/new" class="bttn bttn-addComments absence">Add now</a>
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-2-of-3">
+                <div class="profile-container__full__information">
+                    <h1>Profile</h1>
+                    <div class="personal-info">
+                        <h2>First-name: <%= User.firstName %></h2>
+                        <h2>Last-name: <%= User.lastName %></h2>
+                        <h2>User-name: <%= User.username %></h2>
+                        <h2>E-mail: <%= User.email %></h2>
+                        <h2>Admin-Role: <%= User.isAdmin %></h2>
+                        <h2>Joined here: <%= moment(User.createdAt).fromNow() %></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../partials/footer.ejs")  %>

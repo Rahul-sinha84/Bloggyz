@@ -1,0 +1,17 @@
+<%- include("../partials/header.ejs")  %>
+<div class="container-existing-users">
+    <div class="container-existing-users__text">
+        Welcome Back ⭐️
+    </div>
+    <form action="/login" method="POST">
+        <input type="text" id="username" class="container-existing-users__inner" name="username" placeholder="Username" required>
+        <label for="username">Username</label>
+        <input type="password" id="password" class="container-existing-users__inner" name="password" placeholder="Password" required>
+        <label for="password">Password</label>
+        <button type="submit" class="submit-button-edit">Submit</button>
+        <p class="link-paragraph">New User? <a href="/signup" class="btn-link">Register here</a></p>
+    </form>
+</div>
+
+
+<%- include("../partials/footer.ejs")  %>
