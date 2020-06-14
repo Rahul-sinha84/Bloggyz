@@ -1,5 +1,5 @@
 # Bloggyz
-This is the blog site version 2.0 (1.0 is here==>https://github.com/Rahul-sinha84/Bloggers)😂😂😂
+This is the blog site version 2.0 (1.0 is here==>https://github.com/Rahul-sinha84/Bloggers )😂😂😂
 
 Used sass,advanced CSS3, nodejs, MongoDB(for database) and some of the npm packages...
 
